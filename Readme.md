@@ -1,7 +1,7 @@
 # Личный проект «Кексобукинг» [![Build status][travis-image]][travis-url]
 
 * Студент: [Константин Дрокин](https://up.htmlacademy.ru/javascript/17/user/171311).
-* Наставник: `Неизвестно`.
+* Наставник: [Александр Чудновский](https://htmlacademy.ru/profile/id29109).
 
 ---
 
