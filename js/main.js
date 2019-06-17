@@ -2,6 +2,12 @@
 
 document.querySelector('.map').classList.remove('map--faded');
 
+var getRandom = function (min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+};
+
+var mapWidth = document.querySelector('.map__pins').offsetWidth;
+
 var nearAd = [
   {
     author: {
@@ -9,27 +15,27 @@ var nearAd = [
     },
 
     offer: {
-      type: palace
+      type: 'palace'
     },
 
     location: {
-      x: 24,
-      y: 130
+      x: getRandom(0, mapWidth),
+      y: getRandom(130, 630)
     }
-  }
-/*
+  },
+
   {
     author: {
       avatar: 'img/avatars/user02.png'
     },
 
     offer: {
-      type: flat
+      type: 'flat'
     },
 
     location: {
-      x: 24,
-      y: 130
+      x: getRandom(0, mapWidth),
+      y: getRandom(130, 630)
     }
   },
 
@@ -39,12 +45,12 @@ var nearAd = [
     },
 
     offer: {
-      type: house
+      type: 'house'
     },
 
     location: {
-      x: 24,
-      y: 130
+      x: getRandom(0, mapWidth),
+      y: getRandom(130, 630)
     }
   },
 
@@ -54,12 +60,12 @@ var nearAd = [
     },
 
     offer: {
-      type: bungalo
+      type: 'bungalo'
     },
 
     location: {
-      x: 24,
-      y: 130
+      x: getRandom(0, mapWidth),
+      y: getRandom(130, 630)
     }
   },
 
@@ -69,12 +75,12 @@ var nearAd = [
     },
 
     offer: {
-      type: palace
+      type: 'palace'
     },
 
     location: {
-      x: 24,
-      y: 130
+      x: getRandom(0, mapWidth),
+      y: getRandom(130, 630)
     }
   },
 
@@ -84,12 +90,12 @@ var nearAd = [
     },
 
     offer: {
-      type: flat
+      type: 'flat'
     },
 
     location: {
-      x: 24,
-      y: 130
+      x: getRandom(0, mapWidth),
+      y: getRandom(130, 630)
     }
   },
 
@@ -99,12 +105,12 @@ var nearAd = [
     },
 
     offer: {
-      type: house
+      type: 'house'
     },
 
     location: {
-      x: 24,
-      y: 130
+      x: getRandom(0, mapWidth),
+      y: getRandom(130, 630)
     }
   },
 
@@ -114,14 +120,14 @@ var nearAd = [
     },
 
     offer: {
-      type: bungalo
+      type: 'bungalo'
     },
 
     location: {
-      x: 24,
-      y: 130
+      x: getRandom(0, mapWidth),
+      y: getRandom(130, 630)
     }
-  }*/
+  }
 ];
 
 var listPins = document.querySelector('.map__pins');
@@ -129,9 +135,8 @@ var pinTemplate = document.querySelector('#pin').content.querySelector('.map__pi
 
 for (var i = 0; i < nearAd.length; i++) {
   var pinElement = pinTemplate.cloneNode(true);
-  pinElement.querySelector('style').textContent = 'left: ' + nearAd[i].location.x + 'px; top: ' + nearAd[i].location.y + 'px;';
-  pinElement.querySelector('src').textContent = nearAd[i].author.avatar;
-  pinElement.querySelector('alt').textContent = nearAd[i].offer.type;
+  pinElement.style = 'left: ' + nearAd[i].location.x + 'px; top: ' + nearAd[i].location.y + 'px;';
+  pinElement.querySelector('img').src = nearAd[i].author.avatar;
+  pinElement.querySelector('img').alt = nearAd[i].offer.type;
   listPins.appendChild(pinElement);
 };
-
