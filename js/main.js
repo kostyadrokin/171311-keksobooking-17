@@ -35,10 +35,10 @@ for (var i = 0; i <= 7; i++) {
 var listPins = document.querySelector('.map__pins');
 var pinTemplate = document.querySelector('#pin').content.querySelector('.map__pin');
 
-for (var i = 0; i < nearAd.length; i++) {
+for (var j = 0; j < nearAd.length; j++) {
   var pinElement = pinTemplate.cloneNode(true);
-  pinElement.style = 'left: ' + nearAd[i].location.x + 'px; top: ' + nearAd[i].location.y + 'px;';
-  pinElement.querySelector('img').src = nearAd[i].author.avatar;
-  pinElement.querySelector('img').alt = nearAd[i].offer.type;
+  pinElement.style = 'left: ' + nearAd[j].location.x + 'px; top: ' + nearAd[j].location.y + 'px;';
+  pinElement.querySelector('img').src = nearAd[j].author.avatar;
+  pinElement.querySelector('img').alt = nearAd[j].offer.type;
   listPins.appendChild(pinElement);
 }
