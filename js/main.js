@@ -139,4 +139,4 @@ for (var i = 0; i < nearAd.length; i++) {
   pinElement.querySelector('img').src = nearAd[i].author.avatar;
   pinElement.querySelector('img').alt = nearAd[i].offer.type;
   listPins.appendChild(pinElement);
-};
+}
