@@ -5,14 +5,7 @@ document.querySelector('.map').classList.remove('map--faded');
 var getRandom = function (min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 };
-
-var mapWidth = document.querySelector('.map__pins').offsetWidth;
-
-var offerTypes = ['palace', 'flat', 'house', 'bungalo'];
-
-var nearAd = [];
-
-for (var i = 0; i <= 7; i++) {
+var renderPins = function () {
   var offerType = offerTypes[Math.floor(Math.random() * offerTypes.length)];
   nearAd.push(
       {
@@ -30,6 +23,13 @@ for (var i = 0; i <= 7; i++) {
         }
       }
   );
+};
+var mapWidth = document.querySelector('.map__pins').offsetWidth;
+var offerTypes = ['palace', 'flat', 'house', 'bungalo'];
+var nearAd = [];
+
+for (var i = 0; i <= 7; i++) {
+  renderPins();
 }
 
 var listPins = document.querySelector('.map__pins');
