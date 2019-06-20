@@ -28,7 +28,7 @@ var mapPinMain = document.querySelector('.map__pin--main');
 mapPinMain.addEventListener('click', function () {
   getAbortDisabled(adFormList);
   getAbortDisabled(mapFilters);
-} );
+});
 
 mapPinMain.addEventListener('mouseup', function () {
   var mapPinMainCoord = mapPinMain.getBoundingClientRect();
