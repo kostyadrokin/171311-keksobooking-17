@@ -86,3 +86,55 @@ mapPinMain.addEventListener('mouseup', function () {
   renderPins();
 });
 
+// Валидация
+var adForm = document.querySelector('.ad-form');
+adForm.setAttribute('action', 'https://js.dump.academy/keksobooking');
+
+var formTitle = document.querySelector('#title');
+formTitle.setAttribute('minlength', 30);
+formTitle.setAttribute('maxlength', 100);
+formTitle.required = true;
+
+var formPrice = document.querySelector('#price');
+formPrice.required = true;
+formPrice.setAttribute('max', 1000000);
+
+var formType = document.querySelector('#type');
+formType.addEventListener('change', function () {
+  var options = formType.querySelectorAll('option');
+  for (var i = 0; i < options.length; i++) {
+    if (options[i].selected && options[i].value == 'bungalo') {
+      formPrice.setAttribute('min', 0);
+    } if (options[i].selected && options[i].value == 'flat') {
+      formPrice.setAttribute('min', 1000);
+    } if (options[i].selected && options[i].value == 'house') {
+      formPrice.setAttribute('min', 5000);
+    } if (options[i].selected && options[i].value == 'palace') {
+      formPrice.setAttribute('min', 10000);
+    }
+  }
+});
+
+var formAdress = document.querySelector('#address');
+formAdress.disabled = true;
+
+var formTimeIn = document.querySelector('#timein');
+var formTimeOut = document.querySelector('#timeout');
+formTimeIn.addEventListener('change', function () {
+  var optionsIn = formTimeIn.querySelectorAll('option');
+  var optionsOut = formTimeOut.querySelectorAll('option');
+  for (var i = 0; i < optionsIn.length; i++) {
+    if (optionsIn[i].selected) {
+      optionsOut[i].selected = true;
+    }
+  }
+});
+formTimeOut.addEventListener('change', function () {
+  var optionsIn = formTimeIn.querySelectorAll('option');
+  var optionsOut = formTimeOut.querySelectorAll('option');
+  for (var i = 0; i < optionsOut.length; i++) {
+    if (optionsOut[i].selected) {
+      optionsIn[i].selected = true;
+    }
+  }
+});
