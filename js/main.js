@@ -83,7 +83,6 @@ mapPinMain.addEventListener('click', function () {
 mapPinMain.addEventListener('mouseup', function () {
   var mapPinMainCoord = mapPinMain.getBoundingClientRect();
   document.querySelector('#address').value = (mapPinMainCoord.left + pageXOffset) + ', ' + (mapPinMainCoord.top + pageYOffset);
-  //formAdress.disabled = true;
   renderPins();
   var formAdress = document.querySelector('#address');
   formAdress.setAttribute('readonly', 'readonly');
