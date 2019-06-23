@@ -93,20 +93,20 @@ var adForm = document.querySelector('.ad-form');
 adForm.setAttribute('action', 'https://js.dump.academy/keksobooking');
 
 var formTitle = document.querySelector('#title');
-var formTitleValidation = function () {
-  formTitle.setAttribute('minlength', 30);
-  formTitle.setAttribute('maxlength', 100);
-  formTitle.required = true;
+var formTitleValidation = function (minlength, maxlength, required) {
+  formTitle.setAttribute('minlength', minlength);
+  formTitle.setAttribute('maxlength', maxlength);
+  formTitle.required = required;
 };
 
 var formPrice = document.querySelector('#price');
-var formPriceValidation = function () {
-  formPrice.required = true;
-  formPrice.setAttribute('max', 1000000);
+var formPriceValidation = function (max, required) {
+  formPrice.required = required;
+  formPrice.setAttribute('max', max);
 };
 
-formTitleValidation();
-formPriceValidation();
+formTitleValidation(30, 100, true);
+formPriceValidation(1000000, true);
 
 var formType = document.querySelector('#type');
 formType.addEventListener('change', function () {
