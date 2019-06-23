@@ -92,15 +92,15 @@ mapPinMain.addEventListener('mouseup', function () {
 var adForm = document.querySelector('.ad-form');
 adForm.setAttribute('action', 'https://js.dump.academy/keksobooking');
 
+var formTitle = document.querySelector('#title');
 var formTitleValidation = function () {
-  var formTitle = document.querySelector('#title');
   formTitle.setAttribute('minlength', 30);
   formTitle.setAttribute('maxlength', 100);
   formTitle.required = true;
 };
 
+var formPrice = document.querySelector('#price');
 var formPriceValidation = function () {
-  var formPrice = document.querySelector('#price');
   formPrice.required = true;
   formPrice.setAttribute('max', 1000000);
 };
