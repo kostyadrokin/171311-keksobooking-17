@@ -8,7 +8,7 @@ var getDisabled = function (formArray) {
 };
 
 var getAbortDisabled = function (formArray) {
-  for (var i = 0; i < adFormList.length; i++) {
+  for (var i = 0; i < formArray.length; i++) {
     formArray[i].removeAttribute('disabled');
   }
   document.querySelector('.ad-form').classList.remove('ad-form--disabled');
@@ -83,7 +83,10 @@ mapPinMain.addEventListener('click', function () {
 mapPinMain.addEventListener('mouseup', function () {
   var mapPinMainCoord = mapPinMain.getBoundingClientRect();
   document.querySelector('#address').value = (mapPinMainCoord.left + pageXOffset) + ', ' + (mapPinMainCoord.top + pageYOffset);
+  //formAdress.disabled = true;
   renderPins();
+  var formAdress = document.querySelector('#address');
+  formAdress.setAttribute('readonly', 'readonly');
 });
 
 // Валидация
@@ -114,9 +117,6 @@ formType.addEventListener('change', function () {
     }
   }
 });
-
-var formAdress = document.querySelector('#address');
-formAdress.disabled = true;
 
 var formTimeIn = document.querySelector('#timein');
 var formTimeOut = document.querySelector('#timeout');
