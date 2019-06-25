@@ -96,7 +96,7 @@ mapPinMain.addEventListener('mousedown', function (evt) {
     if (mapPinMain.offsetTop - shift.y <= 130) {
       mapPinMain.style.top = 130 + 'px';
     } if (mapPinMain.offsetTop - shift.y + MAIN_PIN_HEIGHT >= 630) {
-        mapPinMain.style.top = 630 - MAIN_PIN_HEIGHT + 'px';
+      mapPinMain.style.top = 630 - MAIN_PIN_HEIGHT + 'px';
     } else {
       mapPinMain.style.top = (mapPinMain.offsetTop - shift.y) + 'px';
     }
@@ -104,7 +104,7 @@ mapPinMain.addEventListener('mousedown', function (evt) {
     if (mapPinMain.offsetLeft - shift.x <= 0) {
       mapPinMain.style.left = 0 + 'px';
     } if (mapPinMain.offsetLeft - shift.x + MAIN_PIN_WIDTH >= mapWidth) {
-        mapPinMain.style.left = (mapWidth - MAIN_PIN_WIDTH) + 'px';
+      mapPinMain.style.left = (mapWidth - MAIN_PIN_WIDTH) + 'px';
     } else {
       mapPinMain.style.left = (mapPinMain.offsetLeft - shift.x) + 'px';
     }
