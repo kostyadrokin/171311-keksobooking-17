@@ -14,5 +14,5 @@
         listPins.appendChild(pinElement);
       }
     }
-  }
+  };
 })();
