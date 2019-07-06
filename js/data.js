@@ -32,4 +32,38 @@
   // Генерация массива с данными для пинов (моки)
   createData();
 
+  var errorHandler = function () {
+    var errorParent = document.querySelector('main');
+    var errorContainer = document.querySelector('#error')
+      .content
+      .querySelector('.error').cloneNode(true);
+
+    errorParent.appendChild(errorContainer);
+
+    var removeErrorMessage = function () {
+      errorParent.removeChild(errorContainer);
+      document.removeEventListener('click', onErrorClose);
+      document.removeEventListener('keydown', onErrorClose);
+    };
+
+    var onErrorClose = function (evt) {
+      window.util.isEscOrClick(evt, removeErrorMessage);
+    };
+
+    document.addEventListener('click', onErrorClose);
+    document.addEventListener('keydown', onErrorClose);
+
+  };
+
+  var createApartments = function (apartmentServerSideData) {
+    var apartmentsList = [];
+    for (var i = 0; i < apartmentServerSideData.length; i++) {
+      var apartment = apartmentServerSideData[i];
+      apartmentsList.push(apartment);
+    }
+    window.pins = apartmentsList;
+  };
+
+  window.backend.load(createApartments, errorHandler);
+
 })();
