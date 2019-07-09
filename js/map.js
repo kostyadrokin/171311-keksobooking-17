@@ -5,7 +5,7 @@
 
   window.map = {
     renderPins: function () {
-      for (var j = 0; j < window.renderPins.length; j++) {
+      for (var j = 0; j < 5; j++) {
         var listPins = document.querySelector('.map__pins');
         var pinTemplate = document.querySelector('#pin').content.querySelector('.map__pin');
         var pinElement = pinTemplate.cloneNode(true);
