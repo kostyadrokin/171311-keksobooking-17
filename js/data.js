@@ -62,6 +62,7 @@
       apartmentsList.push(apartment);
     }
     window.pins = apartmentsList;
+    window.renderPins = window.pins;
   };
 
   window.backend.load(createApartments, errorHandler);
